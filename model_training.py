@@ -40,8 +40,10 @@ class ModelTraining:
         recognizer.train(faces, np.array(face_ids))
 
         working_path = Path.cwd()
-        model_path = os.path.join(working_path, "model", "trainning_data.yml")
-        recognizer.write(model_path)
+        model_path = os.path.join(working_path, "model")
+        os.makedirs(model_path, exist_ok=True)
+        model_save_path = os.path.join(model_path, "trainning_data.yml")
+        recognizer.write(model_save_path)
 
         print("\n [INFO] {0} faces trained.".format(
             len(np.unique(face_ids))))
