@@ -53,7 +53,7 @@ class FaceDataCapture:
                     break
 
         video.release()
-        cv2.destroyWindow("video")
+        cv2.destroyWindow("Capturing...")
 
     if __name__ == '__main__':
         capture_face_data()
